@@ -1,0 +1,89 @@
+
+
+<!-- form  method="post" enctype="multipart/form-data">
+   <input type="file" class="file-upload" />
+</form> -->
+<div class="file-upload-wrapper">
+ <div ng-click="uploaderOpen()" class="file-upload-label"><a >Uploadfile</a></div>
+<div class="overlay" id="overlay-popup"></div>
+
+<div class="file-upload-content container" id="FileUploadContent">
+ 
+ <div class="row clearfix no-margin">
+	<div class="col-xs-12 header-border">
+		<div class="col-xs-10 header-padding">
+			<h3 class="no-margin">Upload Attachments</h3>
+		</div>
+		<div class="col-xs-2 close-button" ng-click="closeUploader()">
+			close
+		</div>
+	
+	</div>
+ </div>
+ <input type="file" name="myfile[]" multiple>
+	<div class="row clearfix no-margin">
+		<div class="col-xs-12 header-sec">
+		You can choose to upload more than one file at a time. 
+		</div>
+	</div>
+	<div class="row clearfix no-margin">
+		<div class="col-xs-12 file-holder">
+			<div class="file-dropper" id="file-dropper">
+				
+				<div class="label-file-dropper">
+					
+					<span>Alternatively, You may drag and drop in to this box</span>
+				</div>
+			</div>
+		</div>
+	</div>	
+	<div class="row clearfix no-margin">
+		<div class="col-xs-12">
+		
+			<div class="row">
+				<div class="col-xs-12"><span>uploading</span><span ng-bind="checkedFiles"></span><span>Files</span></div>
+			</div>
+			<div class="row">
+				<progressbar max="max" value="progressAll">
+						
+					
+					</progressbar>
+			</div>
+			
+			<div class="progress-wrapper" ng-repeat="file in filesList track by $index">
+			<div class="retry-ajax" ng-click="retryAjax($index)" ng-if="retry[$index]">retry</div>
+			<div class="abort-ajax" ng-click="abortAjax($index)" ng-if="abort[$index]">cancell</div>
+			<div class="success-ajax" ng-if="success[$index]">Success</div>
+        	<div class="stat-report">
+				<span ng-bind="filesList[$index]"></span>
+				<span ng-bind="elems[$index].label"></span>
+				<span ng-bind="attrib[$index].timeRemaining"></span>
+			</div>
+				<div ng-class="progress[$index]">
+					<progressbar max="max" value="elems[$index].stat">
+						
+					
+					</progressbar>
+				</div>
+			</div>
+		</div>
+	</div>	
+	
+   <!--  <form  method="post" enctype="multipart/form-data">
+        <input type="file" name="myfile[]" multiple><br>
+        <input type="submit" value="Upload File to Server">
+    </form> -->
+    
+	<div class="row no-margin">
+		<div class="col-xs-12">
+		
+		</div>
+	</div>
+    
+	<style>
+	
+	</style>
+	
+	</div>
+	</div>
+    <div id="status"></div>

@@ -1,0 +1,44 @@
+ 
+
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>file uploader</title>
+	
+		<script src="js/jquery.min.js" type="text/javascript"></script>
+		<script src="js/angular.min.js" type="text/javascript"></script>
+		<script src="js/plugin/jquery.form.js" type="text/javascript"></script>
+		<script src="js/plugin/ui-bootstrap-tpls-0.12.0.min.js" type="text/javascript"></script>
+		<script src="js/app.js" type="text/javascript"></script>
+		<script src="fileUploaderController.js" type="text/javascript"></script>
+		<script src="fileUploaderDirectives.js" type="text/javascript"></script>
+		<link rel="stylesheet" href="css/bootstrap.min.css">
+		<link rel="stylesheet" href="css/styles.css">
+		
+		
+	</head>
+<body ng-app="fileUploader">
+
+
+<div ng-controller="fileUploadCtrl">
+	<div class="container">
+			<div class="row">
+				<div class="col-md-12">
+					click the below link to upload files 
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-12">
+					<div file-change ></div>
+				</div>
+			</div>
+			
+	</div>
+		
+</div>
+
+
+
+</body>
+</html>
